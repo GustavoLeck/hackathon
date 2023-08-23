@@ -22,9 +22,9 @@ export class ConsultaDistanceController {
         const distancia2 = parseFloat(responseDistance2.distancia);
 
         if (distancia1 < distancia2) {
-            res.status(200).send({ cidade: enderecos.endereco1, distancia: responseDistance1 });
+            res.status(200).send({ loja: enderecos.endereco1, distancia: responseDistance1 });
         } else {
-            res.status(200).send({ cidade: enderecos.endereco2, distancia: responseDistance2 });
+            res.status(200).send({ loja: enderecos.endereco2, distancia: responseDistance2 });
         }
     }
 }
