@@ -18,8 +18,8 @@ export class ConsultaDistanceController {
         const distanceModel2 = new DistanceModel(enderecos.endereco2, responseCep);
         const responseDistance2 = await new ConsultaDistance().execute(distanceModel2);
 
-        const distancia1 = parseFloat(responseDistance1.distancia);
-        const distancia2 = parseFloat(responseDistance2.distancia);
+        const distancia1 = parseFloat(responseDistance1);
+        const distancia2 = parseFloat(responseDistance2);
 
         if (distancia1 < distancia2) {
             res.status(200).send({ loja: enderecos.endereco1, distancia: responseDistance1 });
