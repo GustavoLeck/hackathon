@@ -4,6 +4,8 @@ import { DistanceModel } from "../model/distance-model.js";
 export class ConsultaDistanceController {
     async handle(req, res) {
 
+        console.log("  --> ROTA DE DISTANCIA ULTILIZADA ")
+
         const enderecos = {
             endereco1: { cidade: "Joinville", estado: "SC" },
             endereco2: { cidade: "Porto Alegre", estado: "RS" }
@@ -18,13 +20,13 @@ export class ConsultaDistanceController {
         const distanceModel2 = new DistanceModel(enderecos.endereco2, responseCep);
         const responseDistance2 = await new ConsultaDistance().execute(distanceModel2);
 
-        const distancia1 = parseFloat(responseDistance1.distancia);
-        const distancia2 = parseFloat(responseDistance2.distancia);
+        const distancia1 = parseFloat(responseDistance1);
+        const distancia2 = parseFloat(responseDistance2);
 
         if (distancia1 < distancia2) {
-            res.status(200).send({ cidade: enderecos.endereco1, distancia: responseDistance1 });
+            res.status(200).send({ loja: enderecos.endereco1, distancia: responseDistance1 });
         } else {
-            res.status(200).send({ cidade: enderecos.endereco2, distancia: responseDistance2 });
+            res.status(200).send({ loja: enderecos.endereco2, distancia: responseDistance2 });
         }
     }
 }
