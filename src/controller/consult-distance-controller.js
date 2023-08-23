@@ -4,6 +4,8 @@ import { DistanceModel } from "../model/distance-model.js";
 export class ConsultaDistanceController {
     async handle(req, res) {
 
+        console.log("  --> ROTA DE DISTANCIA ULTILIZADA ")
+
         const enderecos = {
             endereco1: { cidade: "Joinville", estado: "SC" },
             endereco2: { cidade: "Porto Alegre", estado: "RS" }
