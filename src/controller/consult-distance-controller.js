@@ -8,7 +8,7 @@ export class ConsultaDistanceController {
 
         const enderecos = {
             endereco1: { cidade: "Joinville", estado: "SC" },
-            endereco2: { cidade: "Porto Alegre", estado: "RS" }
+            endereco2: { cidade: "Jaragá do Sul", estado: "SC" }
         }
 
         const cepConsulta = req.params.cep.replace(/\D/g, '');
